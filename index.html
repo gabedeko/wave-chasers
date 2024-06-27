@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wave chasers</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #1b1b1b;
+    }
+  </style>
+  <script src="./script/p5.min.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="./script/sketch.js"></script>
+  <script src="./script/wave.js"></script>
+  
+</head>
+
+<body>
+  <main>
+  </main>
+  <script src="./src/CCapture.js"></script>
+  <script src="./src/webm-writer-0.2.0.js"></script>
+  <script src="./src/download.js"></script>
+  <script>
+
+    var capturer = new CCapture ({
+      format:'webm',
+      framerate: 8,
+      verbose: true
+    })
+  </script>
+</body>
+
+</html>
