@@ -3,7 +3,7 @@ class Wave{
         this.angle = 0;
         this.shift = shift;
         this.movement = 0;
-        this.period = 2;
+        this.period = 3;
         this.r = random(0,255);
         this.g = random(0,255);
         this.b = random(0,255);
@@ -11,16 +11,20 @@ class Wave{
 
     display() {
         
-        for (let i=0; i <=360; i+=10) {
-            let x = map(i, 0, 360, -r, r);
+        for (let i=0; i <=360; i+=1.5) {
+            let x = map(i, 0, 360, -rad, rad);
             //print(x);
-            let amplitude = r * sqrt(1 - pow((x/r), 2));
+            let amplitude = rad * sqrt(1 - pow((x/rad), 2));
             let y = amplitude*sin((i + this.angle + this.shift*this.movement)*this.period);
 
             stroke(this.r,this.g,this.b);
             fill(this.r,this.g,this.b);
-            ellipse(x, y, 10, 10);
-            this.col += 20;
+
+            //remove first and last ellipse
+            if (i != 0 && i != 360){
+                ellipse(x, y, 8, 8);
+            }
+            
           }
         
     }
